@@ -33,8 +33,8 @@ class Residencia(models.Model):
     outros = models.TextField('Infraestrutura', blank=True, null=True)
 
     class Meta:
-        verbose_name = 'Residencia'
-        verbose_name_plural = 'Residencias'
+        verbose_name = 'Residência'
+        verbose_name_plural = 'Residências'
 
     def __str__(self):
         return self.imovel.__str__()
