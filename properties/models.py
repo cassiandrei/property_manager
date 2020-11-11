@@ -20,4 +20,21 @@ class Imovel(models.Model):
 
 
 class Residencia(models.Model):
-    dormitorios = 
+    imovel = models.OneToOneField(Imovel, on_delete=models.CASCADE)
+    dormitorios = models.PositiveSmallIntegerField('Quantidade de dormitórios')
+    suites = models.PositiveSmallIntegerField('Quantidade de suítes')
+    lavabos = models.PositiveSmallIntegerField('Quantidade de lavabos')
+    banheiros = models.PositiveSmallIntegerField('Quantidade de Banheiros')
+    salas = models.PositiveSmallIntegerField('Quantidade de Salas')
+    sacadas = models.PositiveSmallIntegerField('Quantidade de Sacadas')
+    vagas = models.PositiveSmallIntegerField('Quantidade de vagas para carros')
+    cozinhas = models.PositiveSmallIntegerField('Quantidade de cozinhas')
+    infra = models.TextField('Infraestrutura', blank=True, null=True)
+    outros = models.TextField('Infraestrutura', blank=True, null=True)
+
+    class Meta:
+        verbose_name = 'Residencia'
+        verbose_name_plural = 'Residencias'
+
+    def __str__(self):
+        return self.imovel.__str__()
