@@ -9,7 +9,6 @@ class ResidenciaAdmin(admin.ModelAdmin):
     list_display = ['dormitorios', 'suites', 'lavabos', 'banheiros', 'salas', 'sacadas', 'vagas', 'cozinhas']
     list_filter = ['dormitorios', 'suites', 'lavabos', 'banheiros', 'salas', 'sacadas', 'vagas', 'cozinhas']
     model = Residencia
-    # change_form_template = "materiais/changeform.html"
 
     # fieldsets = (
     #     ('Material', {
