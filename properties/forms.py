@@ -12,17 +12,17 @@ class ImovelRelatedForm(forms.ModelForm):
     complemento = forms.CharField(label='Complemento', max_length=30, required=False)
 
     class Meta:
-        exclude = ['material']
+        exclude = ['imovel']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         try:
-            self.initial['marca'] = self.instance.material.marca
-            self.initial['valor'] = self.instance.material.valor
-            self.initial['ativo'] = self.instance.material.ativo
-            self.initial['able_kit'] = self.instance.material.able_kit
-            self.initial['script'] = self.instance.material.script
-            self.initial['codigo'] = self.instance.material.codigo
-            self.initial['classe_bndes'] = self.instance.material.classe_bndes
+            self.initial['UF'] = self.instance.imovel.UF
+            self.initial['cidade'] = self.instance.imovel.cidade
+            self.initial['cep'] = self.instance.imovel.cep
+            self.initial['nome'] = self.instance.imovel.nome
+            self.initial['logradouro'] = self.instance.imovel.logradouro
+            self.initial['numero'] = self.instance.imovel.numero
+            self.initial['complemento'] = self.instance.imovel.complemento
         except:
             pass
