@@ -15,7 +15,7 @@ class Imovel(models.Model):
 
     class Meta:
         verbose_name = 'Imóvel'
-        verbose_name_plural = 'Imóveis'
+        verbose_name_plural = '0 - Todos Imóveis'
 
     def __str__(self):
         return '{}, {}, {}, {}/{}'.format(self.nome, self.logradouro, str(self.numero), self.cidade, self.UF)

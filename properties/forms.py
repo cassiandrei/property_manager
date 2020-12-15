@@ -43,6 +43,8 @@ class ImovelRelatedForm(forms.ModelForm):
                                     widget=RelatedFieldWidgetCanAdd(Status))
     contato = forms.CharField(label='Contato', max_length=500, widget=forms.Textarea())
 
+    fotos = forms.ImageField(label='Adicionar fotos', widget=widgets.ClearableFileInput(attrs={'multiple': True}))
+
     class Meta:
         exclude = ['imovel']
 

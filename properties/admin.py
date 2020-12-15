@@ -1,8 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-
-
+from gallery.models import Foto
 from properties.forms import ImovelRelatedForm
 from properties.models import Residencia, Imovel, Terreno, Fazenda
 
@@ -50,6 +49,9 @@ class ResidenciaAdmin(Imovelsavemodel):
             'fields': (
                 'dormitorios', 'suites', 'lavabos', 'banheiros', 'salas', 'sacadas', 'vagas', 'cozinhas', 'infra',
                 'outros')}),
+        ('Fotos', {
+            'fields': (
+                'fotos',)}),
     )
 
 
@@ -98,3 +100,17 @@ class FazendaAdmin(Imovelsavemodel):
 
 
 admin.site.register(Fazenda, FazendaAdmin)
+
+
+class Fotoinline(admin.TabularInline):
+    model = Foto
+    extra = 1
+
+
+class ImovelAdmin(admin.ModelAdmin):
+    list_display = ['UF', 'cidade', 'nome', 'complemento', 'status', 'contato']
+    list_filter = ['UF', 'cidade', 'status']
+    inlines = (Fotoinline, )
+
+
+admin.site.register(Imovel, ImovelAdmin)

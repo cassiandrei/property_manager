@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'gallery',
     'config',
     # libs
-    'gdstorage'
+    'gdstorage',
 ]
 
 MIDDLEWARE = [
