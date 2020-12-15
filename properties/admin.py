@@ -1,8 +1,10 @@
 from django.contrib import admin
 
 # Register your models here.
+
+
 from properties.forms import ImovelRelatedForm
-from properties.models import Residencia, Imovel
+from properties.models import Residencia, Imovel, Terreno, Fazenda
 
 
 class Imovelsavemodel(admin.ModelAdmin):
@@ -21,12 +23,12 @@ class Imovelsavemodel(admin.ModelAdmin):
             imovel.save()
         else:
             imovel = Imovel(UF=form.cleaned_data.get('UF'),
-                                cidade=form.cleaned_data.get('cidade'),
-                                cep=form.cleaned_data.get('cep'),
-                                nome=form.cleaned_data.get('nome'),
-                                logradouro=form.cleaned_data.get('logradouro'),
-                                numero=form.cleaned_data.get('numero'),
-                                complemento=form.cleaned_data.get('complemento')
+                            cidade=form.cleaned_data.get('cidade'),
+                            cep=form.cleaned_data.get('cep'),
+                            nome=form.cleaned_data.get('nome'),
+                            logradouro=form.cleaned_data.get('logradouro'),
+                            numero=form.cleaned_data.get('numero'),
+                            complemento=form.cleaned_data.get('complemento')
                             )
             obj.imovel = imovel
             imovel.save()
@@ -42,13 +44,57 @@ class ResidenciaAdmin(Imovelsavemodel):
 
     fieldsets = (
         ('Imóvel', {
-            'fields': ('UF', 'cidade', 'cep', 'nome', 'logradouro', 'numero', 'complemento'),
+            'fields': ('UF', 'cidade', 'cep', 'nome', 'logradouro', 'numero', 'complemento', 'status', 'contato'),
         }),
         ('Residência', {
             'fields': (
-            'dormitorios', 'suites', 'lavabos', 'banheiros', 'salas', 'sacadas', 'vagas', 'cozinhas', 'infra',
-            'outros')}),
+                'dormitorios', 'suites', 'lavabos', 'banheiros', 'salas', 'sacadas', 'vagas', 'cozinhas', 'infra',
+                'outros')}),
     )
 
 
 admin.site.register(Residencia, ResidenciaAdmin)
+
+
+class TerrenoAdmin(Imovelsavemodel):
+    form = ImovelRelatedForm
+    list_display = ['imovel', 'hectares', 'dimencoes', 'loteamento', 'casa', 'plano', 'limpo', 'agua']
+    list_filter = ['loteamento', 'casa', 'plano', 'limpo', 'agua']
+    model = Residencia
+
+    fieldsets = (
+        ('Imóvel', {
+            'fields': ('UF', 'cidade', 'cep', 'nome', 'logradouro', 'numero', 'complemento', 'status', 'contato'),
+        }),
+        ('Terreno', {
+            'fields': (
+                'hectares', 'dimencoes', 'loteamento', 'casa', 'plano', 'limpo', 'limpo_texto', 'agua', 'agua_texto',
+                'posicao')}),
+    )
+
+
+admin.site.register(Terreno, TerrenoAdmin)
+
+
+class FazendaAdmin(Imovelsavemodel):
+    form = ImovelRelatedForm
+    list_display = ['imovel', 'hectares', 'dimencoes', 'loteamento', 'casa', 'plano', 'limpo', 'agua']
+    list_filter = ['loteamento', 'casa', 'plano', 'limpo', 'agua']
+    model = Residencia
+
+    fieldsets = (
+        ('Imóvel', {
+            'fields': ('UF', 'cidade', 'cep', 'nome', 'logradouro', 'numero', 'complemento', 'status', 'contato'),
+        }),
+        ('Terreno', {
+            'fields': (
+                'hectares', 'dimencoes', 'loteamento', 'casa', 'plano', 'limpo', 'limpo_texto', 'agua', 'agua_texto',
+                'posicao')}),
+        ('Fazenda', {
+            'fields': (
+                'energia', 'animais', 'propriedade',
+            )}),
+    )
+
+
+admin.site.register(Fazenda, FazendaAdmin)

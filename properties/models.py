@@ -10,6 +10,8 @@ class Imovel(models.Model):
     logradouro = models.CharField('Logradouro', max_length=50)
     numero = models.PositiveIntegerField('Número', blank=True, null=True)
     complemento = models.CharField('Complemento', max_length=30, blank=True, null=True)
+    status = models.ForeignKey('config.Status', on_delete=models.PROTECT, null=True)
+    contato = models.TextField('Contato', blank=True, null=True)
 
     class Meta:
         verbose_name = 'Imóvel'
@@ -62,19 +64,14 @@ class Terreno(models.Model):
         return self.imovel.__str__()
 
 
-class Fazenda(models.Model):
-    imovel = models.OneToOneField(Imovel, on_delete=models.CASCADE)
-    hectares = models.FloatField('Hectares', blank=True, null=True)
-    dimencoes = models.TextField('Dimensões', blank=True, null=True)
-    agua = models.BooleanField('Água')
-    agua_texto = models.TextField('Descrição Água', blank=True, null=True)
+class Fazenda(Terreno):
     energia = models.BooleanField('Energia')
     animais = models.TextField('Criação de animais')
-    propriedade = models.TextField('Limpo')
+    propriedade = models.TextField('Propriedade')
 
     class Meta:
-        verbose_name = 'Terreno'
-        verbose_name_plural = 'Terrenos'
+        verbose_name = 'Fazenda'
+        verbose_name_plural = 'Fazenda'
 
     def __str__(self):
         return self.imovel.__str__()
