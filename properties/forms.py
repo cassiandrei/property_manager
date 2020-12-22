@@ -6,6 +6,8 @@ from django.utils.safestring import mark_safe
 from django.conf import settings
 
 from config.models import Status
+from gallery.models import Foto
+from properties.models import Imovel
 
 
 class RelatedFieldWidgetCanAdd(widgets.Select):
@@ -41,7 +43,7 @@ class ImovelRelatedForm(forms.ModelForm):
     complemento = forms.CharField(label='Complemento', max_length=30, required=False)
     status = forms.ModelChoiceField(label='Status', queryset=Status.objects.all(),
                                     widget=RelatedFieldWidgetCanAdd(Status))
-    contato = forms.CharField(label='Contato', max_length=500, widget=forms.Textarea())
+    contato = forms.CharField(label='Contato', max_length=500, widget=forms.Textarea(), required=False)
 
     fotos = forms.ImageField(label='Adicionar fotos', widget=widgets.ClearableFileInput(attrs={'multiple': True}))
 
@@ -58,5 +60,16 @@ class ImovelRelatedForm(forms.ModelForm):
             self.initial['logradouro'] = self.instance.imovel.logradouro
             self.initial['numero'] = self.instance.imovel.numero
             self.initial['complemento'] = self.instance.imovel.complemento
+            self.initial['status'] = self.instance.imovel.status
+            self.initial['contato'] = self.instance.imovel.contato
+            self.initial['descricao'] = self.instance.imovel.descricao
         except:
             pass
+
+
+class ImovelForm(forms.ModelForm):
+    fotos = forms.ImageField(label='Adicionar fotos', widget=widgets.ClearableFileInput(attrs={'multiple': True}))
+
+    class Meta:
+        model = Imovel
+        fields = '__all__'

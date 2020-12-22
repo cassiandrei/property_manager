@@ -7,6 +7,7 @@ class Imovel(models.Model):
     cidade = models.CharField('Cidade', max_length=50)
     cep = models.CharField('CEP', max_length=10, blank=True, null=True)
     nome = models.CharField('Nome', max_length=100)
+    descricao = models.TextField(blank=True, null=True)
     logradouro = models.CharField('Logradouro', max_length=50)
     numero = models.PositiveIntegerField('Número', blank=True, null=True)
     complemento = models.CharField('Complemento', max_length=30, blank=True, null=True)
@@ -35,8 +36,8 @@ class Residencia(models.Model):
     outros = models.TextField('Outros', blank=True, null=True)
 
     class Meta:
-        verbose_name = 'Residência'
-        verbose_name_plural = 'Residências'
+        verbose_name = '1 - Residência'
+        verbose_name_plural = '1 - Residências'
 
     def __str__(self):
         return self.imovel.__str__()
