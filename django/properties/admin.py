@@ -31,7 +31,10 @@ class Imovelsavemodel(admin.ModelAdmin):
                             nome=form.cleaned_data.get('nome'),
                             logradouro=form.cleaned_data.get('logradouro'),
                             numero=form.cleaned_data.get('numero'),
-                            complemento=form.cleaned_data.get('complemento')
+                            complemento=form.cleaned_data.get('complemento'),
+                            status=form.cleaned_data.get('status'),
+                            descricao=form.cleaned_data.get('descricao'),
+                            contato=form.cleaned_data.get('contato'),
                             )
             obj.imovel = imovel
             imovel.save()
@@ -155,6 +158,7 @@ class ImovelAdmin(admin.ModelAdmin):
     list_filter = ['UF', 'cidade', 'status']
     inlines = (Fotoinline,)
     form = ImovelForm
+    change_form_template = "properties/changeform.html"
 
     def save_model(self, request, obj, form, change):
         super(ImovelAdmin, self).save_model(request, obj, form, change)

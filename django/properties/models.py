@@ -7,7 +7,7 @@ class Imovel(models.Model):
     cidade = models.CharField('Cidade', max_length=50)
     cep = models.CharField('CEP', max_length=10, blank=True, null=True)
     nome = models.CharField('Nome', max_length=100)
-    descricao = models.TextField(blank=True, null=True)
+    descricao = models.TextField('Descrição', blank=True, null=True)
     logradouro = models.CharField('Logradouro', max_length=50)
     numero = models.PositiveIntegerField('Número', blank=True, null=True)
     complemento = models.CharField('Complemento', max_length=30, blank=True, null=True)
@@ -58,8 +58,8 @@ class Terreno(models.Model):
 
 
     class Meta:
-        verbose_name = 'Terreno'
-        verbose_name_plural = 'Terrenos'
+        verbose_name = '2 - Terreno'
+        verbose_name_plural = '2 - Terrenos'
 
     def __str__(self):
         return self.imovel.__str__()
@@ -71,8 +71,8 @@ class Fazenda(Terreno):
     propriedade = models.TextField('Propriedade')
 
     class Meta:
-        verbose_name = 'Fazenda'
-        verbose_name_plural = 'Fazenda'
+        verbose_name = '3 - Fazenda'
+        verbose_name_plural = '3 - Fazenda'
 
     def __str__(self):
         return self.imovel.__str__()

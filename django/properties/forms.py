@@ -38,6 +38,7 @@ class ImovelRelatedForm(forms.ModelForm):
     cidade = forms.CharField(label='Cidade', max_length=50, required=True)
     cep = forms.CharField(label='CEP', max_length=10, required=False)
     nome = forms.CharField(label='Nome', max_length=100, required=True)
+    descricao = forms.CharField(label='Descrição', widget=forms.Textarea(), max_length=500, required=False)
     logradouro = forms.CharField(label='Logradouro', max_length=50, required=True)
     numero = forms.IntegerField(label='Número', min_value=0, required=False)
     complemento = forms.CharField(label='Complemento', max_length=30, required=False)
@@ -45,7 +46,7 @@ class ImovelRelatedForm(forms.ModelForm):
                                     widget=RelatedFieldWidgetCanAdd(Status))
     contato = forms.CharField(label='Contato', max_length=500, widget=forms.Textarea(), required=False)
 
-    fotos = forms.ImageField(label='Adicionar fotos', widget=widgets.ClearableFileInput(attrs={'multiple': True}))
+    fotos = forms.ImageField(label='Adicionar fotos', required=False, widget=widgets.ClearableFileInput(attrs={'multiple': True}))
 
     class Meta:
         exclude = ['imovel']
@@ -68,7 +69,7 @@ class ImovelRelatedForm(forms.ModelForm):
 
 
 class ImovelForm(forms.ModelForm):
-    fotos = forms.ImageField(label='Adicionar fotos', widget=widgets.ClearableFileInput(attrs={'multiple': True}))
+    fotos = forms.ImageField(label='Adicionar fotos', required=False, widget=widgets.ClearableFileInput(attrs={'multiple': True}))
 
     class Meta:
         model = Imovel

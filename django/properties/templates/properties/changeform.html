@@ -1,0 +1,16 @@
+{% extends 'admin/change_form.html' %}
+
+
+{% block object-tools %}
+    <ul class="object-tools">
+        <li>
+            {% if original.imovel %}
+                <a href="{% url 'properties:fotos' original.imovel.id %}" target="_blank" class="historylink">Ver
+                    fotos</a>
+            {% else %}
+                <a href="{% url 'properties:fotos' object_id %}" target="_blank" class="historylink">Ver
+                    fotos</a>
+            {% endif %}
+        </li>
+    </ul>
+{% endblock %}
