@@ -25,7 +25,7 @@ SECRET_KEY = '(21lej9!g_e@&n%n0=n*2gyxvh853fw+7swa5yw!+8av+d=_pl'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ray.growtechnologies.com.br']
 
 # Application definition
 
