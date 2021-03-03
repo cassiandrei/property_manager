@@ -10,7 +10,7 @@ services:
     networks:
       - proxy
     depends_on:
-      - django
+      - web
     environment:
       - VIRTUAL_HOST=ray.growtechnologies.com.br
       - VIRTUAL_NETWORK=nginx-proxy
