@@ -10,7 +10,7 @@ services:
     networks:
       - proxy
     depends_on:
-      - api
+      - django
     environment:
       - VIRTUAL_HOST=ray.growtechnologies.com.br
       - VIRTUAL_NETWORK=nginx-proxy
@@ -18,9 +18,9 @@ services:
       - LETSENCRYPT_HOST=ray.growtechnologies.com.br
       - LETSENCRYPT_EMAIL=admin@growtechnologies.com.br
 
-  api:
-    container_name: api-pmanager
-    build: ./api
+  web:
+    container_name: django-pmanager
+    build: ./django
     restart: always
     command: uwsgi --ini uwsgi.ini
     volumes:
