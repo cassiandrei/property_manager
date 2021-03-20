@@ -61,7 +61,11 @@
         <div class="row">
             <div class="intro">
                 <h2 class="text-center">{{ imovel }}</h2>
+                {% if request.user.is_authenticated %}
+                    <p class="text-center"><a href="/properties/imovel/{{ imovel.pk }}/change/">Editar Dados e Fotos</a></p>
+                {% endif %}
                 <p class="text-center">{% if imovel.descricao %}{{ imovel.descricao|linebreaksbr }}{% endif %}</p>
+
             </div>
             <div class="row photos">
                 {% for foto in fotos %}

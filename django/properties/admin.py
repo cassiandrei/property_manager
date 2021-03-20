@@ -147,8 +147,6 @@ admin.site.register(Fazenda, FazendaAdmin)
 
 class Fotoinline(admin.TabularInline):
     model = Foto
-    extra = 0
-    max_num = 0
     verbose_name = 'Fotos'
     verbose_name_plural = 'Fotos'
 

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "plataforma-imoveis",
+  "private_key_id": "cc228c9becd8090dc5df54969674d66673489608",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCr2qR9lqdkCIht\nTQlDNeKuBCJo1CQC0mH3PCDtLINihRsqtZUA4b60l3r5PO2VZXRAzoao4DxoGIJj\nSZitC3NLYBShI1rFcq6IHbn3jXX7VgeLmO+p79LXokjRakeVb6X64fbWisGd22mX\nsbfUpM0yv9oW9UlpxbZ/XfYYI6ZBiTkOU7pc9lYQx4CtVj2UxzmZzvlpQAfDTk4X\nPgoIy9s21S6oaFhcKoQc1Oqs2o9fBI8pV1X+x3lE5tfn9wgy9QKZIndxoorUhH8j\nm6iOTI/kQTEkJsNgCkS0NeengRzxD40aBOyR9di2oFeZ9VsXpX/1Y6oq75YRv8qT\nNWPqxI65AgMBAAECggEACt9wjocSdF5jVkn8Uumk+7ZEgI4icKDDpLcjzKmnLtul\nyD4YjSebL5URaVUw4WW7tRFz/NmCDOJ3FmXMwG8D5oIP0BGa77jVoMRDtK05KJOM\n8ui0ShPDqtOoSIKRQJvBnDXBbpm1DgIYpEmwzCX4mxQ/DbqLYGMrTJPi6uxPe6Ai\njrQSQn4ggtJO6zsjZ/wHIiU/j4r3HJPLhfSAU4G8Euqp2Xt3uNX/5MwxQ/eJoI83\nyQYlWacw8RsQOqjs8cRC97CuSLJMVZF/1GGrJ+4EvRxF8L6A8aY41yBPoT4AXCua\nxsB/vULYZG+7sz5+1B8TVGCPkqwVGUTuah4PTlGRQQKBgQDugH6vsCFo25x4f/qY\nPF3TtGZZhZz/3abkC8Rw0YfIPFekf96SaZQydc1DrF1TqjbiTc2+3qaaCDgVysGn\neh9egzDxWAP7XCNSp6IDdLm/VdfB3v8WCN1xHwAYFfmjjJK1lnSahPQbYk3ttm2e\nOFVy2xEeElD1NAZcGgGGdTGiQQKBgQC4dmDTKpLZMQMCVxtJxr8SReqrJ4LqiWlT\n6Sk9tzg+7bIGpkDkJKkeyG8aSPoo4Ih5OD7OlrjTTYG0mi1yB0Vkfuyf8DuMtTZP\nEvpAlnTWPnEGjo91lEnCpvGOXfW8miKAyuVUiv+1RTAN4ZLE+e3JRKcG6jRHXeF1\ngkW4d/teeQKBgCWlwNmous1bhSp8QSlQthrZ6iINdkfpTBPJS7vnR0CzTb5YtOB1\nq///GmSpS54OS1WTpHuRl8jOrVO7SrBOFa+Mk+g01YQS+jxs26UiAsQSH9mpgqiO\nw628j/49UcegQ/RICKXvgLzl2plAZ7NG/y3/KIePqpnaGXrmXAFGdIxBAoGBAKuK\nWszFoL6eF6BLhTL8wp+pqWv1WIfnta20/QdJpeLPhWktntcLSMM5viiBiTIObJve\nNHpGLCdEwsRDRNPv8xZb+o1aCOb3dkPe8B60TH8Ynl9sn/jGKDn+qlCtDGOSK1f+\nV3phsR7P8rpV9fl8Oyea0oFZt7hOk+aFeXTtDzRxAoGBALV3i3mdh2FJm8jif+EV\n4ea7LzaU73LBFG550w/eOlw4q90n7Snt37hWjV7p1on3oSbM4KAsW7D4uRp9IMtr\neHaxCKWaBEALIdmkezbJeoeuYBY798dAe9Pi39TL+J+fXGcIno83+OQ84MD8RsWI\nZUq/0CXzTKfMtT1cypdTWEuh\n-----END PRIVATE KEY-----\n",
+  "client_email": "upload-google-drive@plataforma-imoveis.iam.gserviceaccount.com",
+  "client_id": "114874601246427559001",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/upload-google-drive%40plataforma-imoveis.iam.gserviceaccount.com"
+}
