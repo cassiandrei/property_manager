@@ -20,3 +20,6 @@ urlpatterns = [
     path('', admin.site.urls),
     path('properties/', include('properties.urls'))
 ]
+
+admin.site.site_header = 'Gerenciador de imóveis'
+admin.site.site_title = 'Administração'
