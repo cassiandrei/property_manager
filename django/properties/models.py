@@ -16,7 +16,7 @@ class Imovel(models.Model):
 
     class Meta:
         verbose_name = 'Imóvel'
-        verbose_name_plural = '0 - Todos Imóveis'
+        verbose_name_plural = 'Todos Imóveis'
 
     def __str__(self):
         return '{}, {}, {}, {}/{}'.format(self.nome, self.logradouro, str(self.numero), self.cidade, self.UF)
@@ -36,11 +36,15 @@ class Residencia(models.Model):
     outros = models.TextField('Outros', blank=True, null=True)
 
     class Meta:
-        verbose_name = '1 - Residência'
-        verbose_name_plural = '1 - Residências'
+        verbose_name = 'Residência'
+        verbose_name_plural = 'Residências'
 
     def __str__(self):
         return self.imovel.__str__()
+
+    @property
+    def status(self):
+        return self.imovel.status
 
 
 class Terreno(models.Model):
@@ -58,11 +62,15 @@ class Terreno(models.Model):
 
 
     class Meta:
-        verbose_name = '2 - Terreno'
-        verbose_name_plural = '2 - Terrenos'
+        verbose_name = 'Terreno'
+        verbose_name_plural = 'Terrenos'
 
     def __str__(self):
         return self.imovel.__str__()
+
+    @property
+    def status(self):
+        return self.imovel.status
 
 
 class Fazenda(Terreno):
@@ -71,9 +79,13 @@ class Fazenda(Terreno):
     propriedade = models.TextField('Propriedade')
 
     class Meta:
-        verbose_name = '3 - Fazenda'
-        verbose_name_plural = '3 - Fazenda'
+        verbose_name = 'Fazenda'
+        verbose_name_plural = 'Fazenda'
 
     def __str__(self):
         return self.imovel.__str__()
+
+    @property
+    def status(self):
+        return self.imovel.status
 
