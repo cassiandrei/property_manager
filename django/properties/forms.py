@@ -38,7 +38,7 @@ class ImovelRelatedForm(forms.ModelForm):
     cidade = forms.CharField(label='Cidade', max_length=50, required=True)
     cep = forms.CharField(label='CEP', max_length=10, required=False)
     nome = forms.CharField(label='Nome', max_length=100, required=True)
-    descricao = forms.CharField(label='Descrição', widget=forms.Textarea(), max_length=500, required=False)
+    descricao = forms.CharField(label='Descrição', widget=forms.Textarea(), max_length=2000, required=False)
     logradouro = forms.CharField(label='Logradouro', max_length=50, required=True)
     numero = forms.IntegerField(label='Número', min_value=0, required=False)
     complemento = forms.CharField(label='Complemento', max_length=30, required=False)
