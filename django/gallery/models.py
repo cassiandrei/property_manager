@@ -5,7 +5,7 @@ gd_storage = GoogleDriveStorage()
 
 
 class Foto(models.Model):
-    imovel = models.ForeignKey('properties.Imovel', related_name='residencia_id', null=True, blank=True, on_delete=models.CASCADE)
+    imovel = models.ForeignKey('properties.Imovel', on_delete=models.CASCADE)
     residencia = models.ForeignKey('properties.Residencia', related_name='residencia_id', null=True, blank=True, on_delete=models.CASCADE)
     terreno = models.ForeignKey('properties.Terreno', related_name='terreno_id',  null=True, blank=True, on_delete=models.CASCADE)
     fazenda = models.ForeignKey('properties.Fazenda', related_name='fazenda_id', null=True, blank=True, on_delete=models.CASCADE)

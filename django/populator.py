@@ -24,3 +24,4 @@ for user in users:
                                             password=user['password'], email=user['email'], username=user['username'])
         new_user.save()
         print('\nUser "%s" created!' % user['username'])
+
