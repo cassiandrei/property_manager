@@ -243,4 +243,4 @@ class ImovelAdmin(admin.ModelAdmin):
         return False
 
 
-# admin.site.register(Imovel, ImovelAdmin)
+admin.site.register(Imovel, ImovelAdmin)
